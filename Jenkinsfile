@@ -1,11 +1,4 @@
-
-pipeline {
-    agent any
-    
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the code from the Git repository
-                git 'https://github.com/ajayreddii/v-profile.git'
-            }
-        }
+node{
+stage('Get Code'){ 
+git credentialsId: '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', url: 'https://github.com/ajayreddii/v-profile.git' 
+ }
