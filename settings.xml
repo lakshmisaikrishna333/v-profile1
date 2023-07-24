@@ -10,9 +10,9 @@
       <password>admin@1</password>
     </server>
     <server>
-      <id>${RELEASE-REPO}</id>
-      <username>${NEXUS-USER}</username>
-      <password>${NEXUS-PASS}</password>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin@1</password>
     </server>
         <server>
         <id>${CENTRAL-REPO}</id>
