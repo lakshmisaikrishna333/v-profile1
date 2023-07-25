@@ -18,6 +18,6 @@ stage('sonarqube'){
 stage('nexus'){
           nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '56cd9671-d42c-4b94-afbd-96be55421899', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: '', groupId: 'v.in', nexusUrl: '54.175.126.120', nexusVersion: 'nexus3', protocol: 'http', repository: 'vpro-maven-group', version: '2.0'
        }
-}
-}
+
+
 }
