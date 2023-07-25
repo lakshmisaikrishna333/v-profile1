@@ -27,10 +27,10 @@ pipeline {
         NEXUSPASS = credentials('nexuspass')
     
 }
-        stage('Build'){
+    
                 sh 'mvn sonar:sonar beploy'
             
-        }
+        
     
 
 }
