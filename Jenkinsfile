@@ -5,6 +5,6 @@ node
        
     }
     stage {
-        sh "mvn clean test"
+        sh "mvn  test"
 }
 }
