@@ -1,22 +1,34 @@
-node{
-stage('Get Code'){ 
-git credentialsId: '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', url: 'https://github.com/ajayreddii/v-profile.git' 
- }
-
-  stage('Build package'){
-        def mavenHome = tool name:"maven-3.8.8", type:"maven"
-        def mavenCMD = "${mavenHome}/bin/mvn"
-        sh "${mavenCMD} clean package"
-  }
-   stage('sonarqube'){
-            def mavenHome = tool name:"maven-3.8.8", type:"maven"
-            def mavenCMD = "${mavenHome}/bin/mvn"
-            sh "${mavenCMD} sonar:sonar"
-   }
-    stage('nexus'){
-           
-             def mavenHome = tool name:"maven-3.8.8", type:"maven"
-            def mavenCMD = "${mavenHome}/bin/mvn"
-            sh "${mavenCMD} clean deploy "
+pipeline {
+    agent any
+    tools {
+        maven "MAVEN3"
+        jdk "OracleJDK8"
+    }
+  environment {
+        SNAP_REPO = 'vprofile-snapshot'
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'admin123'
+        RELEASE_REPO = 'vprofile-release'
+        CENTRAL_REPO = 'vpro-maven-central'
+        NEXUSIP = '54.175.126.120'
+        NEXUSPORT = '8081'
+        NEXUS_GRP_REPO = 'vpro-maven-group'
+        NEXUS_LOGIN = 'nexuslogin'
+        SONARSERVER = 'sonarserver'
+        SONARSCANNER = 'sonarscanner'
+        NEXUSPASS = credentials('nexuspass')
+    }
+  stages {
+        stage('Build'){
+            steps {
+                sh 'mvn -s settings.xml -DskipTests install'
+            }
+            post {
+                success {
+                    echo "Now Archiving."
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+    }
 }
-}       
+}
