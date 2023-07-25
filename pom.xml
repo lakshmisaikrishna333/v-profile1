@@ -9,7 +9,8 @@
     <url>http://maven.apache.org</url>
     <properties>
 	<sonar.host.url>http://3.90.188.108:9000/</sonar.host.url>
-		<sonar.login>sqa_0f96da709b1a7f5db0fe5756b3e95718ecde634c</sonar.login>
+		<sonar.login>admin</sonar.login>
+	        <sonar.password>asdmin123</sonar.password>
         <spring.version>4.2.0.RELEASE</spring.version>
         <spring-security.version>4.0.2.RELEASE</spring-security.version>
         <spring-data-jpa.version>1.8.2.RELEASE</spring-data-jpa.version>
