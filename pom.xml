@@ -175,7 +175,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>v-profile Snapshot Nexus Repository </name>
-	      <url>http://54.175.126.120:8081/repository/vprofile-snapshot/</url>
+	      <url>http://54.175.126.120:8081/repository/new-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
