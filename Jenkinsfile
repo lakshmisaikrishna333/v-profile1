@@ -31,5 +31,6 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
+        }
     }
 }
