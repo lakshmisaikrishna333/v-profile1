@@ -10,3 +10,6 @@ stages {
                 sh 'mvn sonar:sonar '
     
 }
+        }
+}
+}
