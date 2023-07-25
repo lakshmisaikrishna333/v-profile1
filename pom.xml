@@ -11,9 +11,9 @@
 	<sonar.host.url>http://3.90.188.108:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 	        <sonar.password>admin123</sonar.password>
-        <spring.version>4.2.0.SNAPSHOT</spring.version>
-        <spring-security.version>4.0.2.SNAPSHOT</spring-security.version>
-        <spring-data-jpa.version>1.8.2.SNAPSHOT</spring-data-jpa.version>
+        <spring.version>4.2.0</spring.version>
+        <spring-security.version>4.0.2</spring-security.version>
+        <spring-data-jpa.version>1.8.2</spring-data-jpa.version>
         <hibernate.version>4.3.11.Final</hibernate.version>
         <hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
         <mysql-connector.version>5.1.36</mysql-connector.version>
