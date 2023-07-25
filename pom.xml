@@ -4,7 +4,7 @@
     <groupId>com.visualpathit</groupId>
     <artifactId>vprofile</artifactId>
     <packaging>war</packaging>
-    <version>v2-SNAPSHOT</version>
+    <version>v2</version>
     <name>Visualpathit VProfile Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
@@ -164,8 +164,9 @@
 		</plugin>
         </plugins>
     </build>
-     <distributionManagement>
+	<distributionManagement>
 	
+	    
 	    <repository>
 	      <id>nexus</id>
 	      <name>v-profile release Nexus Repository </name>
@@ -179,15 +180,10 @@
 	    </snapshotRepository>
 	    
 	</distributionManagement>
-
-
-
-	
-	
-	<repositories>		
+	<repositories>
     <repository>
-      <id>nexus</id>
-      <url>http://54.175.126.120:8081/repository/vpro-maven-group/</url>
+      <id>${NEXUS-GRP-REPO}</id>
+      <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS-GRP-REPO}/</url>
     </repository>
   </repositories>
 </project>
