@@ -2,18 +2,9 @@ pipeline {
     agent any
     tools {
         maven "MAVEN3"
-   
+        jdk "OracleJDK8"
     }
-      stages {
-        stage('Build'){
-            steps {
-                sh 'mvn  clean package'
-            }
-        }
-      }
-
- environment {
-        SNAP_REPO = 'http://54.175.126.120:8081/repository/vprofile-snapshot/'
+    SNAP_REPO = 'http://54.175.126.120:8081/repository/vprofile-snapshot/'
         NEXUS_USER = 'admin'
         NEXUS_PASS = 'admin123'
         RELEASE_REPO = 'http://54.175.126.120:8081/repository/vprofile-release/'
@@ -25,12 +16,18 @@ pipeline {
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
         NEXUSPASS = credentials('nexuspass')
-    
-}
-    
-                sh 'mvn sonar:sonar beploy'
-            
-        
-    
+    }
 
+    stages {
+        stage('Build'){
+            steps {
+                sh 'mvn -s settings.xml -DskipTests install'
+            }
+            post {
+                success {
+                    echo "Now Archiving."
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+    }
 }
