@@ -169,7 +169,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>v-profile release Nexus Repository </name>
-	      <url>http://54.175.126.120:8081/repository/vprofile-release/</url>
+	      <url>http://54.175.126.120:8081/repository/NEW-RELEASE/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
