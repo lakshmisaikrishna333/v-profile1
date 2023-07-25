@@ -28,9 +28,8 @@ pipeline {
     
 }
         stage('Build'){
-            steps {
                 sh 'mvn sonar:sonar beploy'
-            }
+            
         }
     
 
