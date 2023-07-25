@@ -1,22 +1,10 @@
-pipeline {
-    agent any
+node 
+{
     tools {
         maven "MAVEN3"
        
     }
- 
-        stage('Build'){
-            steps {
-                sh 'mvn clean package '
-    
+    stage {
+        sh "mvn clean test"
 }
-        }
-    
-        stage('Build'){
-            steps {
-                sh 'mvn sonar:sonar '
-    
 }
-        }
-}
-
