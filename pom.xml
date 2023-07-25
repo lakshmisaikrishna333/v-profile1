@@ -169,13 +169,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>v-profile release Nexus Repository </name>
-	      <url>http://100.24.33.233:8081/repository/maven-releases/</url>
+	      <url>http://54.175.126.120:8081/repository/vprofile-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>v-profile Snapshot Nexus Repository </name>
-	      <url>http://100.24.33.233:8081/repository/maven-snapshots/</url>
+	      <url>http://54.175.126.120:8081/repository/vprofile-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
