@@ -2,8 +2,7 @@ FROM ubuntu
 MAINTAINER AJAYREDDY549
 
 RUN apt-get update && apt-get install nginx git systemctl -y
-COPY . .
-RUN cp -r * /var/www/html/
-RUN systemctl eanable nginx
+RUN git clone https://github.com/ajayreddii/v-profile.git &&  mv v-profile/* /var/www/html
+
 CMD ["nginx"]
-EXPOSE 8080
+EXPOSE 80
