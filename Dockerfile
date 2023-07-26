@@ -1,8 +1,4 @@
-FROM ubuntu
+FROM ajayreddy549/tomcatimg:latest
 MAINTAINER AJAYREDDY549
+COPY target/vprofile-v2*.war  /usr/local/tomcat/webapps/vprofile-v2.war
 
-RUN apt-get update && apt-get install nginx git systemctl -y
-RUN git clone https://github.com/ajayreddii/v-profile.git &&  mv v-profile/* /var/www/html
-
-CMD ["nginx"]
-EXPOSE 80
