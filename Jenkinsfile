@@ -26,5 +26,6 @@ stage('nexus'){
      stage("runing  docker image"){
         sh 'docker run -d -p 80:80 ajayreddy549/v-profile'
 }
+}
 
 
