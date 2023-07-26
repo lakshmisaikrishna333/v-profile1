@@ -20,7 +20,7 @@ stage('nexus'){
        }
 
 stage('Docker Build and Tag') {
-           steps {
+           build {
               
                 sh 'docker build -t VPROFILE:V2 .' 
                 sh 'docker tag VPROFILE:V2 ajayreddy549/VPROFILE:V2'
