@@ -20,11 +20,11 @@ stage('nexus'){
        }
 
       stage('Build Image'){
-        sh 'docker build -t ajayreddy549/v-profile . '
+        sh 'docker build -t ajayreddy549/v-profile  . '
        
 }
      stage("runing  docker image"){
-        sh 'docker run -d -p 9999:8080 ajayreddy549/v-profile '
+        sh 'docker run -d -p 9999:8080 ajayreddy549/v-profile  tail -f /dev/null '
 }
 }
 
