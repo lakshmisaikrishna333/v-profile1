@@ -1,9 +1,9 @@
-FROM ubuntu:22.04
-WORKDIR /app
-RUN apt-get update -y
-RUN apt-get -y  nginx
-COPY v-profile ./
-RUN mv v-profile index.html
-RUN mv index.html /var/www/html/
-EXPOSE 80
-CMD ["/usr/sbin/nginx", "-c", "daemon off;"]
+FROM ubuntu
+MAINTAINER AJAYREDDY549
+
+RUN apt-get update && apt-get install nginx git systemctl -y
+COPY .  index.html
+RUN cp -r * /var/www/index.html
+RUN systemctl eanable nginx
+CMD ["nginx"]
+EXPOSE 8080
