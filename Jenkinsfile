@@ -19,9 +19,9 @@ stage('nexus'){
           nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: '56cd9671-d42c-4b94-afbd-96be55421899', groupId: 'v.in', nexusUrl: '54.91.81.166:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
        }
 
-     stage("build"){
-                sh 'docker build -t VPROFILE:V2 .' 
-                sh 'docker tag VPROFILE:V2 ajayreddy549/VPROFILE:V2'
+      stage('Build Image'){
+        sh 'docker build -t ajayreddy549/v-profile . '
+       
 }
 }
 
