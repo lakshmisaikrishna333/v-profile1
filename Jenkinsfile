@@ -26,9 +26,7 @@ stage('nexus'){
      stage("runing  docker image"){
         sh 'docker run -d -p 8081:8080 ajayreddy549/v-profile  ' 
 }
-     Sstage ("to aws ecr"){
-         sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 516890180996.dkr.ecr.us-east-1.amazonaws.com'
-     }
+    
 }
 
 
