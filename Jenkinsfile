@@ -16,7 +16,7 @@ stage('sonarqube'){
      }
 
 stage('nexus'){
-          nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: '56cd9671-d42c-4b94-afbd-96be55421899', groupId: 'v.in', nexusUrl: '54.91.81.166:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
+          nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: '56cd9671-d42c-4b94-afbd-96be55421899', groupId: 'v.in', nexusUrl: '100.26.144.59:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
        }
 
       stage('Build Image'){
@@ -24,7 +24,7 @@ stage('nexus'){
        
 }
      stage("runing  docker image"){
-        sh 'docker run -d -p 9999:8080 ajayreddy549/v-profile  tail -f /dev/null '
+        sh 'docker run -d -p 9999:8080 ajayreddy549/v-profile  '
 }
 }
 
