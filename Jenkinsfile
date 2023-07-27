@@ -24,7 +24,7 @@ stage('nexus'){
        
 }
      stage("runing  docker image"){
-        sh 'docker run -d -p 8081:8080 ajayreddy549/v-profile  ./startup.sh  ' 
+        sh 'docker run -d -p 8081:8080 ajayreddy549/v-profile  tail -f /dev/nul  ' 
 }
 }
 
